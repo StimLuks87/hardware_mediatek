@@ -1,0 +1,15 @@
+/*
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.mediatek.hardware.audio@7.1;
+
+interface IMTKPrimaryDeviceCallback {
+    struct SetParameters {
+        uint8_t param;
+        uint32_t param_len;
+    };
+
+    setParametersCallback(SetParameters params);
+};

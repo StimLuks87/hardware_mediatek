@@ -1,0 +1,19 @@
+/*
+ * SPDX-FileCopyrightText: The LineageOS Project
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+package vendor.mediatek.hardware.audio@7.1;
+
+import android.hardware.audio@7.0::Result;
+import android.hardware.audio@7.0::IPrimaryDevice;
+import IAudioParameterChangedCallback;
+import IMTKPrimaryDeviceCallback;
+
+interface IMTKPrimaryDevice extends android.hardware.audio@7.0::IPrimaryDevice {
+    typedef android.hardware.audio@7.0::Result Result;
+
+    setupParametersCallback(IMTKPrimaryDeviceCallback callback) generates (Result retval);
+    setAudioParameterChangedCallback(IAudioParameterChangedCallback callback) generates (Result retval);
+    clearAudioParameterChangedCallback() generates (Result retval);
+};
