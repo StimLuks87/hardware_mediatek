@@ -10,14 +10,14 @@ MTK_NON_6GHZ_PLATFORMS := $(MTK_NON_MULTISTA_PLATFORMS) mt6779 mt6853 mt6873 mt6
 MTK_NON_CONNAC3_PLATFORMS := $(MTK_NON_6GHZ_PLATFORMS) mt6878 mt6886 mt6895 mt6897 mt6899 mt6983
 
 PRODUCT_PACKAGES += \
-    MssiFrameworkOverlay \
     MssiNetworkStackOverlay \
     MssiWifiOverlay
+    # MssiFrameworkOverlay
 
 ifeq ($(ENABLE_VENDOR_RIL_SERVICE), true)
 PRODUCT_PACKAGES += \
-    MssiFrameworkTelephonyOverlay \
-    MssiTelephonyOverlay
+    MssiFrameworkTelephonyOverlay
+    # MssiTelephonyOverlay
 
 ifeq (,$(filter $(TARGET_BOARD_PLATFORM),$(MTK_NON_5G_PLATFORMS)))
 PRODUCT_PACKAGES += \
